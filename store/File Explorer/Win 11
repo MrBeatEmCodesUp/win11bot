@@ -1,0 +1,1866 @@
+Explorer++ Version History
+--------------------------
+
+Current version: 1.3.5
+
+Version 1.3.5 (03/02/2013)
+--------------------------
+New features:
+- Added support for another drag and drop format (which is used,
+  for example, by Outlook 2003 when copying attachments).
+
+Bug fixes:
+- The 'Open in New Tab' menu item was not always been added
+  to the folder context menu. Fixed.
+- Previously, file times could not be set for a directory using
+  the set file attributes dialog. Fixed.
+- A UTF-16 LE BOM is now written when pasting text (as a file).
+
+Misc:
+- Logging is now avilable. It can be enabled using the following
+  command:
+  explorer++.exe -enable_logging
+  Information will then be saved to Explorer++.log, which will
+  be created within the same directory as the executable.
+
+Version 1.3.4 (12/11/2011)
+--------------------------
+New features:
+- Implemented the media protection column.
+
+Bug fixes:
+- If the search dialog was closed while searching, the
+  application would crash. Fixed.
+- When clicking the 'Close' button while searching (in the
+  search dialog), the dialog would not close until the
+  search was finished. It could also result in a crash.
+  Fixed.
+- Fixed multithreaded bug in the search dialog.
+- In certain areas (such as the search dialog), Unicode
+  characters were not been converted to lowercase correctly.
+  Fixed.
+
+Version 1.3.3 (29/10/2011)
+--------------------------
+Bug fixes:
+- The media duration column was previously showing times in
+  100-nanosecond units. Updated to hh:mm:ss.
+- The processed search string (rather than original search
+  string) was been stored in the search dialog. Fixed.
+
+Misc:
+- When searching using the search dialog, if the filename
+  entered already appears in the history list, it will simply
+  be swapped to the first position (rather than been re-entered).
+- The number of history entries stored for the filename field
+  in the search dialog is now capped at 20.
+
+Version 1.3.2 (11/10/2011)
+--------------------------
+Bug fixes:
+- Under some circumstances, a copy and paste/drag and drop
+  operation would fail (when copying a message from Outlook
+  2010, for example).
+- Fixed bug in customize colors dialog (entries were not been
+  moved up/down correctly).
+- When renaming a file in the listview with IME turned on,
+  text was been overwritten (because the text selection was
+  modified). Fixed.
+- Links to zip files will now be opened in an external program,
+  if 'Open zip files in Explorer++' is unchecked.
+
+Version 1.3.1 (05/09/2011)
+--------------------------
+New features:
+- The sort mode and direction are now saved in the search
+  dialog.
+
+Bug fixes:
+- The image in the about dialog would not be shown when a
+  translation was loaded. Fixed.
+
+Misc:
+- The help file (if present) can now be launched from the
+  Help|Help menu. It must be named "Explorer++ Help.chm"
+  and be in the same folder as the Explorer++ executable.
+- Updated 'Always hide the link (.lnk) extension' option
+  to read 'Hide the link (.lnk) extension'.
+
+Version 1.3 (20/08/2011)
+------------------------
+New features:
+- The complete state of most dialogs are now saved.
+- Most dialogs can now be resized.
+- Significant improvements to split file dialog.
+- Context menu extensions are now shown on the main
+  right-click context menu.
+- Enhanced undo functionality. Multiple rename operations
+  (such as those performed by the mass rename dialog) can now be
+  undone as a single set.
+- 'Delete permanently' button added to main toolbar.
+- Added 'Close Tabs to the Right' entry to the tab right-click menu.
+- The listview hover time can now be set by the user.
+- Right-clicking search dialog results now brings up the file
+  context menu.
+- Search dialog results can now be sorted by name/path.
+- Added 'Case sensitive' option to filter dialog.
+- The folder navigation sound can now be disabled via the
+  options dialog.
+- The search dialog can now search using regular expressions.
+  A case insensitive flag has also been added.
+- Deleting an item in the treeview will select the parent
+  folder prior to deletion (allowing the previously selected
+  folder to be deleted).
+- Right-clicking on the root desktop folder in the treeview now
+  brings up its context menu.
+- Trailing spaces are now trimmed when renaming an item in the
+  listview/treeview.
+
+Bug fixes:
+- In Windows 7 when closing a tab, the wrong taskbar
+  preview pane would be closed (i.e. the taskbar preview
+  pane for another tab would be closed instead).
+- Fixed a crash that occurred when collapsing a node in
+  the treeview.
+- When single-click activation was enabled, and an area
+  in the listview was selected, any file under the mouse
+  when it was released would be opened. Fixed.
+- Fixed 'Open Parent in New Tab' bug (parent of current
+  tab would always be opened, regardless of which tab was
+  clicked).
+- When opening a folder in a locked tab, the newly created
+  tab was not switched to correctly (which caused directory
+  modifications to fail, for example). Fixed.
+- Fixed toolbar bug (when a button was added or removed from
+  a toolbar, the length of the toolbar would be reset, causing
+  it to resize).
+- Fixed listview gridline issue (Windows XP only).
+- Under certain circumstances, translation DLL's would still
+  be loaded, even if they did not match the current version.
+  Fixed.
+- Filename extension is now hidden correctly (if required) in
+  details view.
+- Size column now remains right aligned after sorting.
+- When allow multiple instances was not set, and a new instance
+  was started, it would not restore the previous window correctly
+  if it was minimized. Fixed.
+- Summary information stream codepage wasn't been checked. Fixed.
+- Fixed control panel handling bug.
+- Fixed drag and drop memory leak.
+- Fixed bugs in mouse wheel handler.
+- Fixed bug in options dialog (apply button not enabled when
+  changing size selection in files and folders tab).
+
+Misc:
+- Version number now takes the form: Major.Minor.Micro.Revision.
+- Improved drag and drop interoperability.
+- File sizes are now formatted according to the current system
+  locale.
+- When collapsing the direct parent of the current folder
+  in the treeview, the listview selection would change to
+  the parent. Now works when collapsing multiple levels.
+- The 'Size On Disk', 'Total Size', and 'Free Space' columns
+  are now right aligned.
+- The current directory is now set when the directory or tab
+  selection changes.
+- Updated 'Handle zip files' option to read 'Open zip files
+  in Explorer++'.
+- The error message shown on a translation DLL version mismatch
+  will now be shown in the target language (when possible).
+- The (main) right click context menu is no longer owner drawn.
+
+Version 1.2 (13/09/2010)
+------------------------
+New features:
+- Taskbar thumbnails are now shown for each
+  tab in Windows 7 (this can be turned on/off by toggling
+  'Show taskbar thumbnails' in the Options dialog).
+- 'New Tab' added to Tasks jump list in Windows 7.
+- Numerous improvements to drag and drop/copy and paste.
+- Text on the clipboard can now be pasted as a file.
+  The file will be given a name of the form:
+  Clipboard Text ([datetime]).txt.
+  This also applies to drag and drop.
+- Images on the clipboard can now be pasted as a file.
+  The file will be given a name of the form:
+  Clipboard Image ([datetime]).bmp.
+  This also applies to drag and drop.
+- The contents of the address bar can now be dragged and dropped.
+- Large toolbar icons added.
+- Files can now be dropped onto existing application
+  toolbar buttons. This will open the dropped files in
+  that application.
+- 'Automatically synchronize treeview with main pane' option
+  added; this setting controls whether or not the treeview
+  will automatically stay in sync with the listview whilst
+  browsing.
+- 'Automatically expand nodes on selection' option added;
+  if this setting is enabled treeview nodes will automatically
+  expand when they are selected.
+- Shift+Mousewheel down and shift+mousewheel up can now
+  be used to browse backwards and forwards, respectively.
+- The tab bar can now be hidden when there is only one
+  tab.
+- The tab bar can now be shown at the bottom of the listview.
+- A navigation sound is now played when entering a folder.
+- The current folder is now selected when navigating up.
+- Listview groups can now be collapsed (Vista and later).
+- Listview checkboxes can now be turned on by selecting
+  'Use check boxes to select items' in the Options dialog.
+- Closing the last tab will now close the main window
+  (provided the corresponding option is selected in the
+  Options dialog).
+- Items can now be rearranged in details view.
+- It is now possible to show file sizes in one of:
+  Bytes/KB/MB/GB/TB/PB.
+- Ctrl+Backspace can now be used to browse to the root of
+  a tab.
+- Shift+Double Click will now open the selected folder in
+  a new window.
+- "Desktop", "Pictures", "Music", "Videos" and "Documents"
+  are all now valid address bar shortcuts.
+
+Bug fixes:
+- Several dialogs weren't closing when Escape was pressed. Fixed.
+- Fixed 'Copy Universal File Paths' bug.
+- Previously, if 'Hide file extensions' was checked, the display
+  names of both files and folders would be altered. Fixed so that
+  only files names are altered.
+- When 'Single-click to open an item' was selected, navigation up
+  would occur on a single click, instead of a double click. Fixed.
+- Fixed directory modification bug.
+- Fixed set file attributes dialog bug (file dates weren't been
+  saved correctly).
+- Fixed treeview rename bug (child items not updated).
+- Fixed treeview sort bug.
+- Fixed toolbar positioning bug.
+- Fixed custom infotips bug.
+
+Misc:
+- All settings are now saved to the registry (or XML file)
+  when 'Ok' or 'Apply' is clicked in the Options dialog.
+- The treeview no longer syncs with network/UNC paths.
+- Copied data now remains on the clipboard after Explorer++
+  exits.
+- Search dialog now turns patterns of the form '???' into
+  '*???*' before searching.
+- Main window now obeys startup position information
+  (e.g. minimized/maximized, etc).
+- Wildcard select/deselect is now case insensitive.
+- Can now scroll listview/treeview, even when it does not
+  have focus.
+- The options dialog is now modeless.
+- Handle zip files set to false by default.
+
+Version 1.1 (05/04/2010)
+------------------------
+New features:
+ - Explorer++ can now replace Windows Explorer for all
+   folders (Vista and later only).
+ - New drag and drop type supported (this will now
+   allow files to be dropped from Outlook and url's from
+   a web browser's address bar).
+ - Column widths are now saved and restored for all tabs.
+ - Added 'Save Column Layout as Default' under the 'View'
+   menu which will save the current tabs column layout
+   as the default.
+ - Items in the treeview can now be dragged and dropped
+   using right click.
+ - Folder sizes can now be disabled on removable and
+   network drives.
+ - The privilege level can now be shown in the
+   title bar by 'Show privilege level in title bar'
+   in the Options dialog.
+ - The extended right click menu is now shown when
+   shift is held down and an item is right-clicked.
+ - Locked tabs now display a lock icon, rather than
+   the normal folder icon.
+ - Double clicking in a tabs whitespace will now
+   navigate to the parent folder.
+ - Middle click can now be used to open items in
+   the treeview in a new tab.
+ - Middle click can now be used to open items on
+   the bookmarks toolbar in a new tab.
+ - Middle click can now be used to open items on
+   the drives toolbar in a new tab.
+
+Bug fixes:
+ - All items in the treeview are now sorted correctly.
+ - Icons for the treeview are now gathered in a
+   background thread.
+ - Icon overlays are now shown in the treeview.
+ - When .lnk extensions were hidden, and a file
+   with the .lnk extension was renamed, it would
+   lose its extension. Fixed.
+ - When items were renamed, no icon overlay would
+   be set. Fixed.
+ - Under certain conditions (for example, when .lnk
+   extensions were hidden in Windows Explorer),
+   and a file of that type was renamed, its extension
+   would be hidden in details view in the 'Name'
+   column. Fixed.
+ - When the system font size for menus was changed,
+   the custom menus would be sized incorrectly. Fixed.
+ - When the treeview had focus, the file action
+   buttons on the main toolbar (cut, copy, past,
+   delete, etc) would be incorrectly disabled.
+   Fixed.
+ - When a tab was locked (lock tab and address), it
+   would not be possible to open a new tab. Fixed.
+ - Fixed toolbar bug.
+ - Fixed search bug.
+ - Fixed drives toolbar issue.
+
+Misc:
+ - Explorer++ will now only load translation DLL's
+   that match the version of the main executable.
+ - Updated About dialog and image.
+ - Added menu image for Edit->Paste Shortcut.
+
+Version 1.0.0.0 (23/11/2009)
+----------------------------
+New features:
+ - It is now possible to search for files using
+   Tools->Search.
+ - Custom coloring rules can now be applied to
+   the listview (i.e. an items text color can be
+   set based on its filename and/or attributes).
+ - Items can now be dragged using the right mouse button
+   (listview only).
+ - Tiles view now shows basic file information.
+ - New tabs can now be created by double clicking
+   in the blank space to the right of the last tab.
+ - Explorer++ can now be restricted to only running
+   one instance by deselecting 'Allow multiple instances'
+   in the options dialog.
+ - 'Large Icons' and 'Extra Large Icons' view modes
+   added (vista and later).
+ - It is now possible to browse through tabs by moving
+   the mouse over the tab window, and scrolling with the
+   mouse wheel.
+ - Various media metadata columns added (Album,
+   Duration, Composer, etc).
+ - Columns can now be rearranged by dragging and
+   dropping them in place.
+ - Folder sizes are now included when sorting by size.
+ - Universal file paths can now be copied by selecting
+   File->Copy Universal File Paths.
+ - New items can now be inserted in their sorted position
+   by selecting 'Insert new items in their sorted position'
+   in the options dialog.
+ - System files can now be hidden by selecting 'Hide protected
+   operating system files' within the options dialog.
+ - The link (.lnk) file extension can now be hidden by
+   selecting 'Always hide the link (.lnk) extension'.
+ - Single click activation mode can now be used by selecting
+   'Single-click to open an item (point to select)' in
+   the options dialog.
+ - Zip files may be opened externally by deselecting
+   'Handle zip files' within the options dialog.
+ - All tabs can now be forced to have the same width by selecting
+   'Force all tabs to have the same width' in the options dialog.
+ - Double clicking a tab will now close it (provided 'Double click
+   to close a tab' is selected in the options dialog).
+ - Ctrl+double clicking a folder will now cause it to open in
+   a new tab.
+ - Alt+Home will now browse to the default tab folder.
+ - In rename mode, F2 will now cycle between selecting an
+   items filename, extension and filename and extension.
+ - Ctrl+1...8 will now select the specified tab (between the
+   first and eighth tab).
+ - Ctrl+9 will now select the last tab.
+ - In rename mode, tab will now select the next item
+   and place it into rename mode.
+ - Application toolbar buttons can now have their names
+   hidden (so that only the icon is visible on the toolbar).
+ - Right-clicking on the folder icon in the display window will
+   now show the context menu for the selected files (or the
+   normal right-click menu if no items are selected).
+ - Ctrl+Scroll will now cycle through each of the view modes
+   within the listview.
+ - Ctrl+Pg Up and Ctrl+Pg Down as well as Ctrl+] and Ctrl+[
+   can now be used to select the previous and next tabs,
+   respectively.
+ - Alt+double click will now show an items properties.
+
+Bug fixes:
+ - When creating a file/folder in details mode, the item
+   would be selected, but immediately taken out of rename
+   mode. Fixed.
+ - Improved listview grouping.
+ - Fixed several drag and drop bugs.
+ - Improved drag and drop item repositioning.
+ - Fixed cut/copy bug.
+ - Fixed 'Open In New Tab' treeview bug.
+ - File->Set file attributes now works for the treeview as well.
+ - Folders with a total size greater than 4GB would have
+   their size shown incorrectly when the 'Show folder
+   sizes' option was enabled.
+ - The icon modifier shown when dragging and dropping now
+   matches the action that will take place when the
+   item is dropped.
+ - Previously, if file was been pasted into a tab,
+   and the directory of that tab was changed,
+   the files would continue to be added. Fixed.
+ - When creating a new tab, its directory would not
+   always be monitored. Fixed.
+ - Items would not always be correctly ghosted when they
+   were cut. Fixed.
+ - When creating a new folder using the 'New Folder' button
+   on the main toolbar, the item would not be put into rename
+   mode if the current directory was a directory root. Fixed.
+ - The 'Open new tabs next to the current one' option
+   was not been correctly read back from the registry,
+   causing it to lose its value between sessions. Fixed.
+ - The bookmarks toolbar would not be updated when a bookmark
+   was renamed. Fixed.
+ - Fixed double click bug.
+ - When switching folders, the column header in details
+   view was not been updated.
+ - When entering a folder with an ampersand (&) in its name,
+   the ampersand would be incorrectly translated into an
+   underscore. Fixed.
+ - Fixed new menu bug.
+ - Improved mass rename dialog.
+
+Misc:
+ - Explorer++ will now save a minidump file in the
+   event of a crash. This file is saved to %TEMP%.
+ - Explorer++ can now be set as the default file manager
+   by using the command:
+   explorer++.exe -set_as_default
+ - Explorer++ can now be removed as the default file manager
+   by using the command:
+   explorer++.exe -remove_as_default
+ - Most dialogs are now centered initially, and will save
+   various state information when closed.
+ - Options dialog partially redesigned.
+ - Items can now be copied, cut and pasted to/from the treeview
+   using Ctrl+C, Ctrl+X and Ctrl+V, respectively.
+ - Chevrons are now shown when toolbar buttons do not
+   have enough room to be shown.
+ - Columns (in details view) are no longer resized
+   automatically when changing folders or refreshing.
+ - Separate 'Group By' menu added, as appears in Vista
+   onwards.
+ - If a files name is only partially shown within the listview,
+   it will be added to the files infotip.
+ - There is now a confirmation dialog shown when
+   deleting an application button.
+ - Various new details shown on display window.
+ - Previews on the display window will not be shown if
+   the display window is inactive.
+ - Ctrl+R can now be used to refresh a folder.
+ - Ctrl+L can now be used to select the address bar.
+ - Ctrl+E can now be used to duplicate a tab.
+ - Left click drag and drop is now cancelled when the
+   user clicks the right mouse button.
+ - Tools > Show drive information removed.
+
+Version 0.9.5.4 (31/05/2009)
+----------------------------
+New features:
+ - Explorer++ can now be used in place of Explorer
+   for filesystem folders by selecting 'Replace
+   Explorer for filesystem folders' in the 'Options'
+   dialog (requires Administrator privileges).
+ - The positions of the main toolbars are now saved
+   and restored between sessions.
+ - Folders can now be dragged onto the bookmarks
+   toolbar directly.
+ - Files can now be dragged onto the
+   applications toolbar directly.
+ - Icons are automatically updated when a file
+   association changes.
+ - Any file that can be previewed in Explorer can
+   now be previewed in Explorer++.
+ - Pasted files are now selected upon creation
+   (provided no other files are selected).
+ - The apps key can now be used to show the main
+   context menu.
+ - Enabled drag and drop modifier keys for the
+   tree view.
+ - Right clicking the listview header in details
+   mode will now bring up a context menu, which
+   allows columns to be easily turned on and off.
+ - The user's name can now be shown in the main title
+   bar.
+ - The 'Move Up' and 'Move Down' buttons in the
+   'Organize Bookmarks' dialog now work.
+ - File previews in the display window can now be
+   turned on or off using the 'Show file previews
+   in display window' setting in the 'Options'
+   dialog.
+ - F6 and Shift+F6 can now be used to cycle
+   through each window.
+ - Ctrl+Enter will now open the selected folder
+   in a new tab.
+ - Ctrl+F4 can now be used to close the current
+   tab.
+ - Ctrl+Shift+P will now copy the current folders
+   path to the clipboard.
+
+Bug fixes:
+ - When a new file was created, it would not always
+   be put into rename mode automatically [Windows XP only].
+ - Previously, the right click context menu would
+   not be shown for some items. Fixed.
+ - Fixed listview positioning bug.
+ - If file extensions were hidden, and a filename started
+   with a dot, no text would be shown for that item.
+ - If file extensions were hidden in Explorer, they
+   would be hidden in Explorer++ as well, regardless
+   of settings. Fixed.
+ - Drives are now added/removed correctly from the
+   listview, treeview and drives toolbar.
+ - If a cd/dvd was inserted/removed, the entire drive
+   would be added/removed, even though the physical
+   device had not changed. Fixed.
+ - Files are now sorted using natural sort order
+   (e.g. file2.txt comes before file19.txt).
+ - If the folders pane had focus, and an item was selected,
+   the file associated menus (such as properties)
+   would be disabled incorrectly. Fixed.
+ - Fixed several memory leaks.
+ - Improved synchronization in details mode.
+ - Improvements made to thumbnails mode.
+ - Fixed window size issue.
+ - Fixed address bar path issue.
+ - Fixed thumbnail image positioning error.
+ - Fixed back/forward menu bug.
+ - Fixed directory monitoring bug.
+ - In details mode, if the first column was removed and
+   then added again, the other columns would not be
+   shifted correctly.
+ - Items on the "Send to" context submenu may not have
+   worked correctly. Fixed.
+ - Fixed drag and drop bug.
+
+Misc:
+ - The format of the time and date fields now
+   follows the system time and date format.
+ - Clicking the views button on the main toolbar
+   now cycles between the various views, rather
+   than showing the drop-down menu.
+ - A small delay has been added to the time
+   between when a file is dragged over a tab,
+   and focus is switched to that tab.
+ - There is now a confirmation dialog shown when
+   deleting a bookmark.
+ - In empty folders viewed in details mode, each
+   column now has its width set to a default value.
+
+Version 0.9.3.2 (24/03/2009)
+----------------------------
+New features:
+ - An application toolbar has been added, which
+   allows quick access to any program.
+ - Drag and drop modifier keys (Ctrl+Shift,
+   Ctrl, Shift, Alt) now work.
+ - Explorer++ is now compatible with paths
+   containing embedded environment variables,
+   such as %systemroot%.
+ - The tab control can now be extended across
+   the entire window.
+ - Full row selection in details mode can now be
+   turned on or off.
+
+Bug fixes:
+ - Removable drives can now be ejected and
+   removed safely while Explorer++ is running.
+ - Drives are now inserted and removed from
+   the drives toolbar dynamically, as they are
+   connected and disconnected from the system.
+ - If file extensions were hidden, and a file
+   was renamed, the extension would be dropped.
+ - When renaming a file within the listview, if
+   the proposed filename ended with a trailing
+   space or period, the rename operation would
+   appear to succeed, even though it had not
+   (as filenames cannot end with a trailing
+   space or period).
+ - When a folder was put into rename mode, if
+   its name contained a period, everything
+   before the period would be selected (as for
+   files).
+ - Corrected folder system infotip bug.
+ - Previously, if files were dragged into
+   Explorer++, and the auto arrange listview
+   style was on, the files would not be
+   repositioned.
+ - Fixed drag and drop selection bug.
+ - Fixed drag and drop position bug.
+ - Fixed several drag and drop memory leaks.
+ - When loading from a configuration file, the
+   correct language selection would show up in
+   the 'Options' dialog, but the default
+   language would be used for the UI (regardless
+   of the language that was loaded).
+ - The "Show In Groups" option was not been saved
+   to the XML file. Fixed.
+ - The 'Move Up', 'Move Down', 'Enable' and
+   'Disable' buttons now work within the
+   'Set Default Columns' dialog.
+ - Fixed listview focus issue.
+ - The background of the listview was previously
+   been set to white, regardless of the system
+   background color.
+
+Misc:
+ - The languages shown in the 'Options' dialog are
+   now generated dynamically, based on any
+   translation DLL's within the same directory
+   as Explorer++.
+ - The normal rename/replace dialog is now shown
+   when a collision is encountered during a
+   copy/move operation.
+ - The main windows can now be cycled through in
+   reverse using Shift+Tab.
+ - The size column in details view is now
+   right-aligned.
+ - Removed the 'Back' text from the toolbar back
+   button.
+ - The 'Filter Results...' menu item under
+   View|Filter has been changed to 'Set Filter...'.
+
+Version 0.9.2.1 (15/02/2009)
+----------------------------
+New features:
+ - Each tab now has an icon attached to it (the
+   folder icon from the tabs' current directory).
+ - The default directory for new tabs can now
+   be set from within the 'Default Settings' pane
+   of the 'Options' dialog.
+ - Explorer++ is now compatible with application
+   command buttons and keys, such as the back and
+   forward buttons found on some mice and keyboards.
+ - Infotips can now be turned off, set to the system
+   ones (i.e. the ones used by Windows Explorer), or
+   be set to custom (for now, this simply sets the
+   infotip to be the files modification date).
+ - Tab lock state and custom name are now saved
+   between sessions.
+
+Bug fixes:
+ - Fixed several directory monitoring bugs.
+ - Shortcuts that pointed to a website
+   (via a URL) would previously not be opened
+   within the default browser. Fixed.
+ - When two files were selected, whose individual
+   sizes were less than 4GB, but whose combined
+   size was greater than 4GB, the combined size
+   would not be shown correctly. Fixed.
+ - When a file size was between 1000 and 1024 of the
+   specified unit (bytes, KB, MB, etc), the fourth
+   character would not be shown, causing the size to
+   appear to be incorrect. Fixed.
+ - Fixed a paste file bug.
+ - If a file that could not be cut (such as a virtual
+   item) was cut anyway using Ctrl+X, the item would
+   be ghosted whether or not it was actually placed
+   on the clipboard. Fixed.
+ - The address bar would not scroll horizontally.
+   Fixed.
+ - Fixed tab highlight bug.
+ - Because of a timing problem, it was possible that
+   when Explorer++ was opened, the first icon(s)
+   shown may not have been correct. Fixed.
+
+Misc:
+ - Ctrl+N can now be used to create a new folder.
+ - On a rename operation, if a files new name
+   contains an invalid character [\/:*?"<>|],
+   an error dialog will be shown.
+ - When an item is put into rename mode by clicking
+   on it twice, only the files name (and not the
+   files extension, if any), will be selected.
+ - An error message is now shown when attempting
+   to open a shortcut that points to a non-existent
+   item.
+ - Items on the 'Go' menu now have their names
+   taken directly from the operating system. This
+   means, for example, that the 'My Computer' item
+   will be shown as 'My Computer' on XP, but
+   'Computer' on Vista.
+ - Added an error message for the situation when a
+   new folder could not be created.
+ - A slight change to the bookmarks key means that
+   bookmarks saved in previous versions will not
+   have their paths loaded in this version
+   (this only affects bookmarks saved to the
+   registry).
+
+
+Version 0.9.0.8 (03/02/2009)
+----------------------------
+New features:
+ - Sort by File System now works.
+ - Folders created using the 'New Folder' toolbar
+   button or menu item are now automatically
+   selected for rename when they are created.
+
+Bug fixes:
+ - Fixed rebar positioning error that occurred
+   when using the "Windows Classic" theme.
+
+Version 0.9.0.6 (31/01/2009)
+----------------------------
+Bug fixes:
+ - Fixed overflow bug.
+
+Misc:
+ - Any previous registry settings can now be cleared
+   using the command:
+   explorer++.exe -clear_settings
+   This command should be used if either version
+   Alpha 1 or Alpha 2 have previously been run.
+
+Version 0.9.0.0 (30/01/2009)
+----------------------------
+New features:
+ - Explorer++ is now built as a Unicode
+   executable.
+ - Explorer++ can now save its settings
+   to an XML preference file (config.xml).
+   Explorer++ will attempt to load its
+   settings in the following order:
+    1. config.xml (this file must be in the
+      same directory as Explorer++)
+    2. the registry
+   If neither of these options are available,
+   Explorer++ will switch to using its
+   internal defaults.
+   To save to the config file initially, check the
+   'Save preferences to XML file' in the 'Options'
+   dialog.
+ - Significantly upgraded bookmarks system.
+ - Icon overlays (such as those used by
+   TortoiseSVN) are now supported.
+ - Items that are created using the shell 'New' menu
+   are now automatically selected and put into
+   rename mode on creation.
+ - A file rename operation can now be undone by
+   selection 'Edit|Undo'.
+ - Folder sizes are now shown in details view.
+ - A drives toolbar is now available, which
+   allows for quick access to any drive.
+ - Bands on the rebar can now be repositioned.
+ - Tabs can now be renamed, by right clicking
+   on them and selecting 'Rename Tab...'.
+ - 'Lock Tab and Address' now works. This option,
+   when selected, will block any directory
+   changes from occurring within the current
+   tab.
+ - Folder shortcuts are now opened within Explorer++.
+ - When in thumbnails view, image thumbnails
+   are now gathered independently of the main
+   thread.
+ - Added 'Open Parent in New Tab' menu item to tab
+   context menu.
+ - Added 'Bookmark Tab' toolbar button.
+ - Added 'New Tab' toolbar button.
+ - Added 'Show Command Prompt' toolbar button.
+ - Added 'Organize Bookmarks' toolbar button.
+ - Added option to disable treeview delay.
+ - 'Show In Groups' now works when sorting by camera model.
+ - 'Show In Groups' now works when sorting by date taken.
+ - 'Show In Groups' now works when sorting by image width.
+ - 'Show In Groups' now works when sorting by image height.
+ - 'Show In Groups' now works when sorting by file extension.
+ - 'Show In Groups' now works when sorting by file system.
+ - 'Show In Groups' now works when sorting by network
+   adapter status.
+
+Bug fixes:
+ - All columns could previously be deselected,
+   causing the program to crash. Fixed.
+ - Fixed several small memory leaks that
+   occurred in thumbnails view.
+ - When at the root of the namespace (i.e.
+   the desktop), refreshing the tab would
+   change the path to the real desktop. Fixed.
+ - When at the root of the namespace (i.e.
+   the desktop), the 'New' menu item would not
+   appear on the right click context menu. Fixed.
+ - Fixed a problem that occurred when cutting
+   items.
+ - Fixed a drag and drop issue that caused an
+   item dragged between tabs not to be moved.
+ - When dragging and dropping an item between
+   tabs, the item count in the destination tab
+   and item selection count in the source tab
+   would become corrupted. Fixed.
+ - When creating a new tab without the 'auto
+   arrange' style, auto arrange would be set
+   anyway. Fixed.
+ - Fixed selection bug.
+ - When items (such as executable files) are
+   opened from within Explorer++, their
+   start directory is now set to the directory
+   they reside within.
+ - Fixed several small memory leaks that
+   occurred when closing a tab.
+ - Improved synchronization between threads.
+
+Misc:
+ - The menu selection color is now alpha blended.
+ - Drives in the treeview are now sorted
+   by drive letter, rather than drive name.
+ - Pressing the space bar will now cause
+   whichever item in the listview has focus
+   to be selected. If not item has focus, the
+   first item is selected.
+ - Paths specified on the command line no longer
+   need a trailing backslash. For example, the
+   commands:
+   explorer++.exe C:\
+   and
+   explorer++.exe C:
+   will both open the C:\ directory in its own tab.
+ - A command line usage message can now be shown
+   by typing:
+   explorer++.exe /?
+ - Slight changes have been made to the structure
+   of the registry keys used to save program settings.
+   These changes mean that tabs saved in previous
+   versions of Explorer++ will not load in this version.
+
+Version Alpha 2
+---------------
+26/09/2008:
+New features:
+ - The language to use can now be selected in the
+   'Options' dialog, in the 'Language' tab. The
+   language Explorer++ uses is based on the following
+   (in order of importance):
+   1. Any language specified on the command line.
+   2. Any language saved from a previous session
+      (using the above method).
+   3. The system default language.
+ - Files can now be dragged and dropped onto the
+   treeview control.
+ - 'Copy File Paths' can now be used on items in the
+   treeview.
+ - 'Cut' and 'Copy' can now be used to copy and move
+   items from the treeview.
+ - The 'Back' and 'Forward' buttons on the main toolbar
+   now show what folder is back/forward in their infotip.
+ - 'Show In Groups' now works when sorting by title.
+ - 'Show In Groups' now works when sorting by subject.
+ - 'Show In Groups' now works when sorting by author.
+ - 'Show In Groups' now works when sorting by keywords.
+
+Bug fixes:
+ - Fixed bug that would cause directory monitoring to
+   stop working under certain circumstances.
+ - Fixed listview drag and drop bug.
+ - Fixed bug that arose when sorting items by comment.
+ - Fixed 'Merge Files' cancel bug.
+ - Fixed 'Split File' cancel bug.
+ - Fixed small 'Show In Groups' bug.
+ - Fixed toolbar show/hide bug.
+
+Misc:
+ - A small delay has now been added to the treeview,
+   meaning that when a different folder is selected, it
+   is not browsed to immediately.
+
+02/09/2008:
+New features:
+ - 'Show In Groups' now works when sorting by attributes.
+ - 'Show In Groups' now works when sorting by file owner.
+ - 'Show In Groups' now works when sorting by file
+   creation date.
+ - 'Show In Groups' now works when sorting by date of
+   last access.
+ - 'Show In Groups' now works when sorting by short name.
+ - 'Show In Groups' now works when sorting by product name.
+ - 'Show In Groups' now works when sorting by company name.
+ - 'Show In Groups' now works when sorting by file
+   description.
+ - 'Show In Groups' now works when sorting by file version.
+ - 'Show In Groups' now works when sorting by product
+   version.
+
+Bug fixes:
+ - When closing a tab, directory monitoring would sometimes
+   be stopped for a different tab. Fixed.
+ - Fixed toolbar bug that would sometimes cause the program
+   to crash on exit.
+ - When the column representing the current sort mode
+   is deselected, the sort mode is automatically changed
+   to the first available one.
+
+Misc:
+ - Drives in 'My Computer' are now sorted according to
+   drive letter when sorting by name.
+
+21/08/2008:
+New features:
+ - Confirmation when closing multiple tabs can now
+   be requested when the 'Ask for confirmation before
+   closing all tabs' option is selected.
+ - The main toolbar can now be customized by
+   selecting 'Customize...' on the toolbar context
+   menu or on the 'View|Toolbar' menu.
+ - Added an error message for the situation when a
+   file cannot be renamed.
+ - Alt+D will now shift focus to the address bar.
+ - F4 will now show the drop down for the address bar.
+ - Ctrl+B can now be used to access the 'Organize
+   Bookmarks' dialog.
+ - The tab button can now be used to switch
+   between the main item pane, the folders pane and
+   the address bar.
+ - Gridlines in details view can now be toggled on or
+   off via the 'Show gridlines in details view' option
+   within the 'Options' dialog.
+
+Bug fixes:
+ - Fixed 'Remove' button within the 'Destroy Files'
+   dialog.
+ - Fixed 'Remove' button within the 'Merge Files'
+   dialog.
+ - Fixed bug when moving columns up/down in column
+   selection dialog.
+ - Fixed several other small bugs within column
+   selection dialog.
+ - The 'Auto Arrange', 'Show In Groups' and
+   'Sort Ascending' default options are now saved
+   and loaded.
+
+Misc:
+ - Default output file when merging is now 'output.txt'.
+ - Menu mnemonic characters are now underlined on the
+   main menu after the alt key is used to select the menu.
+ - Description of column items are now shown in the
+   'Select Columns' dialog.
+
+10/08/2008:
+New features:
+ - The right click context menu is now owner drawn.
+
+Bug fixes:
+ - Fixed bug that would cause the 'Sort By' submenu to
+   be drawn incorrectly.
+ - Fixed position of the 'hide folders pane' button.
+ - Fixed bug relating to the 'Address Bar' item on the
+   toolbars menu.
+
+20/07/2008:
+New features:
+ - Files can now be merged using 'Actions|Merge Files...'.
+
+Bug fixes:
+ - Fixed 'Go' button bug.
+ - The paste button on the main toolbar is now
+   enabled automatically when there are files
+   on the clipboard, and disabled automatically
+   when there are none.
+
+13/07/2008:
+New features:
+ - Added 'Autosize Columns' to the 'View' menu, which
+   will resize listview columns to fit in the text
+   of all items.
+ - Files can now be dragged and dropped between tabs.
+ - Added a main toolbar context menu.
+ - The main menus as well as the main toolbar context
+   menu are now owner drawn. Various items on the main
+   menus now have pictures shown alongside the menu
+   text.
+ - More main toolbar buttons added.
+
+Bug fixes:
+ - Improvements made to drag and drop handling.
+
+Misc:
+ - Aesthetic changes made to the About dialog.
+ - Build date/time is now shown in the About dialog.
+
+07/07/2008:
+New features:
+ - Menu help strings are now shown for items on the
+   shell context menus.
+ - Added 'Bookmark Folder...' and 'Copy Folder Path'
+   to right click context menu.
+ - When browsing into a folder, the path of the
+   folder been loaded is now shown in the status
+   bar (i.e. if browsing into the 'C:\' folder, the
+   text in the status bar will read 'Loading C:\...').
+ - Added 'Duplicate Tab' to right click menu for tabs,
+   which will open a duplicate of the specified tab
+   in a new tab.
+ - Added 'Lock Tab' to right click menu for tabs to
+   prevent a tab been closed.
+ - Tabs can now be bookmarked using the keyboard
+   shortcut 'Ctrl + D'.
+ - Files can now be split using 'Actions|Split File...'.
+ - Files can now be permanently deleted using
+   'Actions|Destroy Files...'.
+ - If 'Show Folder Sizes' is activated in the
+   'Tools|Options' dialog, folder sizes will now be
+   shown in the display window when a folder is
+   selected.
+
+Bug fixes:
+ - Fixed 'Refresh Tab' on tab right click menu so that
+   it refreshes the specified tab instead of the one
+   that currently has focus.
+ - Thumbnail images are now shown in the correct position
+   when items are sorted in groups.
+ - Small bug fixed relating to showing items in groups
+   when sorting by name.
+ - Menu help now shows for items on the context menu for
+   individual tabs.
+
+03/07/2008:
+New features:
+ - Thumbnails view can now be set as the default view
+   in the 'Default Settings' page of the 'Tools|Options'
+   dialog.
+
+Bug fixes:
+ - Bookmarks can now be rearranged and have their
+   properties (name, location, description) changed.
+ - Tabs now update when relevant settings in the
+   'Tools|Options' dialog have been applied.
+ - Fixed treeview sorting bug.
+ - Folders created are now inserted into their
+   correct position in the treeview automatically.
+ - Some improvements made to 'Tools|Show Drive Information'.
+
+Misc:
+ - New tabs can be opened with middle click even
+   if the listview window does not have focus.
+
+01/07/2008:
+New features:
+ - Thumbnails view has been added to the 'View' menu.
+   As this is the first implementation of thumbnails
+   view, it may still contain some bugs.
+ - Added 'File|Copy Column Text', which will copy
+   the currently selected items' column text to the
+   clipboard.
+ - 'File|Copy Paths' can now copy the full paths
+   of multiple items.
+
+Bug fixes:
+ - Fixed tab swapping bug.
+ - Fixed column sorting bug.
+ - Fixed file size bug that arose when files in a
+   directory were deleted then created.
+
+29/06/2008:
+New features:
+ - Virtual folders can now be opened from the command
+   line simply by supplying their name:
+   e.g. explorer++.exe "control panel"
+   will open the Control Panel.
+
+Bug fixes:
+ - Improvements made to sorting by column.
+ - Fixed bug relating to directories opened
+   via the command line.
+ - Fixed bug relating to columns not showing
+   up for the printers folder.
+ - Folder specific columns added for the
+   'My Network Places' folder.
+ - Additional virtual folders (Recycle Bin, Printers,
+   Network Connections and My Network Places) now have
+   their active columns saved and loaded.
+ - Fixed bug where program would sometimes stop
+   responding after the columns for a folder
+   had been changed.
+
+Misc:
+ - 'My Network Places' on the 'Go' menu has been
+   changed to read 'Network' on Windows Vista.
+ - The items shown on the 'Sort By' menu for a
+   particular tab now depend on the columns that
+   are active for that tab.
+ - Menu help messages added for items on the 'Sort By'
+   menu.
+
+Version Alpha 1
+---------------
+26/06/2008:
+New features:
+ - The display window font can now be changed (via
+   'View|Change Display Colours').
+ - 'Open in New Tab' added to right click menu
+   for treeview items.
+
+Bug fixes:
+ - Fixed combobox keyboard input bug.
+ - Image previews in the display window now
+   adjust their width (to maintain the correct
+   aspect ratio) as the display window is
+   vertically resized.
+
+25/06/2008:
+New features:
+ - Additional settings added to default options
+   dialog (auto arrange, show in groups and
+   sort ascending).
+ - The program can now be launched from the command
+   line with a set of directory arguments:
+   explorer++.exe dir1 dir2 ... dirN
+   where dir1 to dirN are the directories to open.
+   Each directory will be opened in its own tab.
+
+Bug fixes:
+ - Newline characters which are embedded in comments
+   for an item in details view have been replaced
+   with a space.
+ - Virtual folders now have their friendly name
+   shown in the title bar when the program is
+   configured to show full directory paths.
+ - Fixed drag selection bug.
+
+Misc:
+ - The display window can no longer be resized
+   to zero height.
+
+16/06/2008:
+Bug fixes:
+ - Minor internal bugs fixed.
+
+10/06/2008:
+Bug fixes:
+ - Greater amount of internal error checking added.
+
+Misc:
+ - New tabs opened with the middle mouse button are
+   no longer switched to automatically.
+
+08/06/2008:
+New features:
+ - Tabs can now be closed with the middle mouse click
+   button.
+ - Folders can now be opened in a new tab by clicking
+   on them with the middle mouse button.
+
+Bug fixes:
+ - Fixed slight bug with tab selection when a tab is
+   closed.
+ - Sometimes when a folder was created, it would be
+   inserted into the treeview twice. Fixed.
+ - Fixed slight problem involved with swapping tabs.
+
+Misc:
+ - Changed main window title from 'Explorer++ - Current
+   directory' to 'Current directory - Explorer++'.
+ - Display window can now be vertically resized.
+
+06/06/2008:
+Bug fixes:
+ - Greater amount of error checking added to treeview
+   control.
+ - Minor treeview collapse selection bug fixed.
+ - Bug associated with setting column data in details
+   view fixed.
+ - In options dialog, in the default settings tab,
+   setting the details radio button had no effect
+   on the state of the apply button. Fixed.
+ - Fixed small bug where program could crash as a tab
+   is closed (would only happen under very specific
+   circumstances).
+
+05/06/2008:
+Bug fixes:
+ - Display window now redraws its gradient background
+   as the main window is resized.
+ - For items in the my computer folder which have no
+   comment, no comment text is shown in details view
+   (previously a random series of characters was
+   shown for an item with no comment).
+
+04/06/2008:
+Bug fixes:
+ - Fixed treeview updating bug relating to folder
+   renaming.
+ - Minor sorting bug fixed.
+ - Fixed bug relating to the collapse state of
+   treeview items when a folder is deleted.
+ - Slight alteration made so that the copying files
+   dialog is now shown during a paste files operation.
+ - Changed copy and cut on context menu so that they
+   are handled internally, rather than by the shell.
+
+03/06/2008:
+New features:
+ - Added 'Open in New Tab' to right click menu
+   for folders.
+
+Bug fixes:
+ - Fixed bug where delete file permanently on File
+   menu was only sending files to recycle bin.
+ - Preview images were only been shown for images with
+   a lower case extension. Fixed to be case insensitive.
+ - Fixed thread synchronization bug, which would sometimes
+   cause the program to hang.
+
+02/06/2008:
+Bug fixes:
+ - Fixed small bug relating to directory monitoring/updating.
+ - Fixed problem with options not been
+   applied in 'Tools' > 'Options' general tab.
+ - Slight modification made to 'Tools' > 'Show drive information'
+   meaning it may no longer crash. Information shown may be
+   incorrect though.
+
+01/06/2008:
+* INITIAL RELEASE *
+GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU General Public License is a free, copyleft license for
+software and other kinds of works.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+the GNU General Public License is intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.  We, the Free Software Foundation, use the
+GNU General Public License for most of our software; it applies also to
+any other work released this way by its authors.  You can apply it to
+your programs, too.
+
+  When we speak of free software, we are referring to freedom, not
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+them if you wish), that you receive source code or can get it if you
+want it, that you can change the software or use pieces of it in new
+free programs, and that you know you can do these things.
+
+  To protect your rights, we need to prevent others from denying you
+these rights or asking you to surrender the rights.  Therefore, you have
+certain responsibilities if you distribute copies of the software, or if
+you modify it: responsibilities to respect the freedom of others.
+
+  For example, if you distribute copies of such a program, whether
+gratis or for a fee, you must pass on to the recipients the same
+freedoms that you received.  You must make sure that they, too, receive
+or can get the source code.  And you must show them these terms so they
+know their rights.
+
+  Developers that use the GNU GPL protect your rights with two steps:
+(1) assert copyright on the software, and (2) offer you this License
+giving you legal permission to copy, distribute and/or modify it.
+
+  For the developers' and authors' protection, the GPL clearly explains
+that there is no warranty for this free software.  For both users' and
+authors' sake, the GPL requires that modified versions be marked as
+changed, so that their problems will not be attributed erroneously to
+authors of previous versions.
+
+  Some devices are designed to deny users access to install or run
+modified versions of the software inside them, although the manufacturer
+can do so.  This is fundamentally incompatible with the aim of
+protecting users' freedom to change the software.  The systematic
+pattern of such abuse occurs in the area of products for individuals to
+use, which is precisely where it is most unacceptable.  Therefore, we
+have designed this version of the GPL to prohibit the practice for those
+products.  If such problems arise substantially in other domains, we
+stand ready to extend this provision to those domains in future versions
+of the GPL, as needed to protect the freedom of users.
+
+  Finally, every program is threatened constantly by software patents.
+States should not allow patents to restrict development and use of
+software on general-purpose computers, but in those that do, we wish to
+avoid the special danger that patents applied to a free program could
+make it effectively proprietary.  To prevent this, the GPL assures that
+patents cannot be used to render the program non-free.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.
+
+                       TERMS AND CONDITIONS
+
+  0. Definitions.
+
+  "This License" refers to version 3 of the GNU General Public License.
+
+  "Copyright" also means copyright-like laws that apply to other kinds of
+works, such as semiconductor masks.
+
+  "The Program" refers to any copyrightable work licensed under this
+License.  Each licensee is addressed as "you".  "Licensees" and
+"recipients" may be individuals or organizations.
+
+  To "modify" a work means to copy from or adapt all or part of the work
+in a fashion requiring copyright permission, other than the making of an
+exact copy.  The resulting work is called a "modified version" of the
+earlier work or a work "based on" the earlier work.
+
+  A "covered work" means either the unmodified Program or a work based
+on the Program.
+
+  To "propagate" a work means to do anything with it that, without
+permission, would make you directly or secondarily liable for
+infringement under applicable copyright law, except executing it on a
+computer or modifying a private copy.  Propagation includes copying,
+distribution (with or without modification), making available to the
+public, and in some countries other activities as well.
+
+  To "convey" a work means any kind of propagation that enables other
+parties to make or receive copies.  Mere interaction with a user through
+a computer network, with no transfer of a copy, is not conveying.
+
+  An interactive user interface displays "Appropriate Legal Notices"
+to the extent that it includes a convenient and prominently visible
+feature that (1) displays an appropriate copyright notice, and (2)
+tells the user that there is no warranty for the work (except to the
+extent that warranties are provided), that licensees may convey the
+work under this License, and how to view a copy of this License.  If
+the interface presents a list of user commands or options, such as a
+menu, a prominent item in the list meets this criterion.
+
+  1. Source Code.
+
+  The "source code" for a work means the preferred form of the work
+for making modifications to it.  "Object code" means any non-source
+form of a work.
+
+  A "Standard Interface" means an interface that either is an official
+standard defined by a recognized standards body, or, in the case of
+interfaces specified for a particular programming language, one that
+is widely used among developers working in that language.
+
+  The "System Libraries" of an executable work include anything, other
+than the work as a whole, that (a) is included in the normal form of
+packaging a Major Component, but which is not part of that Major
+Component, and (b) serves only to enable use of the work with that
+Major Component, or to implement a Standard Interface for which an
+implementation is available to the public in source code form.  A
+"Major Component", in this context, means a major essential component
+(kernel, window system, and so on) of the specific operating system
+(if any) on which the executable work runs, or a compiler used to
+produce the work, or an object code interpreter used to run it.
+
+  The "Corresponding Source" for a work in object code form means all
+the source code needed to generate, install, and (for an executable
+work) run the object code and to modify the work, including scripts to
+control those activities.  However, it does not include the work's
+System Libraries, or general-purpose tools or generally available free
+programs which are used unmodified in performing those activities but
+which are not part of the work.  For example, Corresponding Source
+includes interface definition files associated with source files for
+the work, and the source code for shared libraries and dynamically
+linked subprograms that the work is specifically designed to require,
+such as by intimate data communication or control flow between those
+subprograms and other parts of the work.
+
+  The Corresponding Source need not include anything that users
+can regenerate automatically from other parts of the Corresponding
+Source.
+
+  The Corresponding Source for a work in source code form is that
+same work.
+
+  2. Basic Permissions.
+
+  All rights granted under this License are granted for the term of
+copyright on the Program, and are irrevocable provided the stated
+conditions are met.  This License explicitly affirms your unlimited
+permission to run the unmodified Program.  The output from running a
+covered work is covered by this License only if the output, given its
+content, constitutes a covered work.  This License acknowledges your
+rights of fair use or other equivalent, as provided by copyright law.
+
+  You may make, run and propagate covered works that you do not
+convey, without conditions so long as your license otherwise remains
+in force.  You may convey covered works to others for the sole purpose
+of having them make modifications exclusively for you, or provide you
+with facilities for running those works, provided that you comply with
+the terms of this License in conveying all material for which you do
+not control copyright.  Those thus making or running the covered works
+for you must do so exclusively on your behalf, under your direction
+and control, on terms that prohibit them from making any copies of
+your copyrighted material outside their relationship with you.
+
+  Conveying under any other circumstances is permitted solely under
+the conditions stated below.  Sublicensing is not allowed; section 10
+makes it unnecessary.
+
+  3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+
+  No covered work shall be deemed part of an effective technological
+measure under any applicable law fulfilling obligations under article
+11 of the WIPO copyright treaty adopted on 20 December 1996, or
+similar laws prohibiting or restricting circumvention of such
+measures.
+
+  When you convey a covered work, you waive any legal power to forbid
+circumvention of technological measures to the extent such circumvention
+is effected by exercising rights under this License with respect to
+the covered work, and you disclaim any intention to limit operation or
+modification of the work as a means of enforcing, against the work's
+users, your or third parties' legal rights to forbid circumvention of
+technological measures.
+
+  4. Conveying Verbatim Copies.
+
+  You may convey verbatim copies of the Program's source code as you
+receive it, in any medium, provided that you conspicuously and
+appropriately publish on each copy an appropriate copyright notice;
+keep intact all notices stating that this License and any
+non-permissive terms added in accord with section 7 apply to the code;
+keep intact all notices of the absence of any warranty; and give all
+recipients a copy of this License along with the Program.
+
+  You may charge any price or no price for each copy that you convey,
+and you may offer support or warranty protection for a fee.
+
+  5. Conveying Modified Source Versions.
+
+  You may convey a work based on the Program, or the modifications to
+produce it from the Program, in the form of source code under the
+terms of section 4, provided that you also meet all of these conditions:
+
+    a) The work must carry prominent notices stating that you modified
+    it, and giving a relevant date.
+
+    b) The work must carry prominent notices stating that it is
+    released under this License and any conditions added under section
+    7.  This requirement modifies the requirement in section 4 to
+    "keep intact all notices".
+
+    c) You must license the entire work, as a whole, under this
+    License to anyone who comes into possession of a copy.  This
+    License will therefore apply, along with any applicable section 7
+    additional terms, to the whole of the work, and all its parts,
+    regardless of how they are packaged.  This License gives no
+    permission to license the work in any other way, but it does not
+    invalidate such permission if you have separately received it.
+
+    d) If the work has interactive user interfaces, each must display
+    Appropriate Legal Notices; however, if the Program has interactive
+    interfaces that do not display Appropriate Legal Notices, your
+    work need not make them do so.
+
+  A compilation of a covered work with other separate and independent
+works, which are not by their nature extensions of the covered work,
+and which are not combined with it such as to form a larger program,
+in or on a volume of a storage or distribution medium, is called an
+"aggregate" if the compilation and its resulting copyright are not
+used to limit the access or legal rights of the compilation's users
+beyond what the individual works permit.  Inclusion of a covered work
+in an aggregate does not cause this License to apply to the other
+parts of the aggregate.
+
+  6. Conveying Non-Source Forms.
+
+  You may convey a covered work in object code form under the terms
+of sections 4 and 5, provided that you also convey the
+machine-readable Corresponding Source under the terms of this License,
+in one of these ways:
+
+    a) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by the
+    Corresponding Source fixed on a durable physical medium
+    customarily used for software interchange.
+
+    b) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by a
+    written offer, valid for at least three years and valid for as
+    long as you offer spare parts or customer support for that product
+    model, to give anyone who possesses the object code either (1) a
+    copy of the Corresponding Source for all the software in the
+    product that is covered by this License, on a durable physical
+    medium customarily used for software interchange, for a price no
+    more than your reasonable cost of physically performing this
+    conveying of source, or (2) access to copy the
+    Corresponding Source from a network server at no charge.
+
+    c) Convey individual copies of the object code with a copy of the
+    written offer to provide the Corresponding Source.  This
+    alternative is allowed only occasionally and noncommercially, and
+    only if you received the object code with such an offer, in accord
+    with subsection 6b.
+
+    d) Convey the object code by offering access from a designated
+    place (gratis or for a charge), and offer equivalent access to the
+    Corresponding Source in the same way through the same place at no
+    further charge.  You need not require recipients to copy the
+    Corresponding Source along with the object code.  If the place to
+    copy the object code is a network server, the Corresponding Source
+    may be on a different server (operated by you or a third party)
+    that supports equivalent copying facilities, provided you maintain
+    clear directions next to the object code saying where to find the
+    Corresponding Source.  Regardless of what server hosts the
+    Corresponding Source, you remain obligated to ensure that it is
+    available for as long as needed to satisfy these requirements.
+
+    e) Convey the object code using peer-to-peer transmission, provided
+    you inform other peers where the object code and Corresponding
+    Source of the work are being offered to the general public at no
+    charge under subsection 6d.
+
+  A separable portion of the object code, whose source code is excluded
+from the Corresponding Source as a System Library, need not be
+included in conveying the object code work.
+
+  A "User Product" is either (1) a "consumer product", which means any
+tangible personal property which is normally used for personal, family,
+or household purposes, or (2) anything designed or sold for incorporation
+into a dwelling.  In determining whether a product is a consumer product,
+doubtful cases shall be resolved in favor of coverage.  For a particular
+product received by a particular user, "normally used" refers to a
+typical or common use of that class of product, regardless of the status
+of the particular user or of the way in which the particular user
+actually uses, or expects or is expected to use, the product.  A product
+is a consumer product regardless of whether the product has substantial
+commercial, industrial or non-consumer uses, unless such uses represent
+the only significant mode of use of the product.
+
+  "Installation Information" for a User Product means any methods,
+procedures, authorization keys, or other information required to install
+and execute modified versions of a covered work in that User Product from
+a modified version of its Corresponding Source.  The information must
+suffice to ensure that the continued functioning of the modified object
+code is in no case prevented or interfered with solely because
+modification has been made.
+
+  If you convey an object code work under this section in, or with, or
+specifically for use in, a User Product, and the conveying occurs as
+part of a transaction in which the right of possession and use of the
+User Product is transferred to the recipient in perpetuity or for a
+fixed term (regardless of how the transaction is characterized), the
+Corresponding Source conveyed under this section must be accompanied
+by the Installation Information.  But this requirement does not apply
+if neither you nor any third party retains the ability to install
+modified object code on the User Product (for example, the work has
+been installed in ROM).
+
+  The requirement to provide Installation Information does not include a
+requirement to continue to provide support service, warranty, or updates
+for a work that has been modified or installed by the recipient, or for
+the User Product in which it has been modified or installed.  Access to a
+network may be denied when the modification itself materially and
+adversely affects the operation of the network or violates the rules and
+protocols for communication across the network.
+
+  Corresponding Source conveyed, and Installation Information provided,
+in accord with this section must be in a format that is publicly
+documented (and with an implementation available to the public in
+source code form), and must require no special password or key for
+unpacking, reading or copying.
+
+  7. Additional Terms.
+
+  "Additional permissions" are terms that supplement the terms of this
+License by making exceptions from one or more of its conditions.
+Additional permissions that are applicable to the entire Program shall
+be treated as though they were included in this License, to the extent
+that they are valid under applicable law.  If additional permissions
+apply only to part of the Program, that part may be used separately
+under those permissions, but the entire Program remains governed by
+this License without regard to the additional permissions.
+
+  When you convey a copy of a covered work, you may at your option
+remove any additional permissions from that copy, or from any part of
+it.  (Additional permissions may be written to require their own
+removal in certain cases when you modify the work.)  You may place
+additional permissions on material, added by you to a covered work,
+for which you have or can give appropriate copyright permission.
+
+  Notwithstanding any other provision of this License, for material you
+add to a covered work, you may (if authorized by the copyright holders of
+that material) supplement the terms of this License with terms:
+
+    a) Disclaiming warranty or limiting liability differently from the
+    terms of sections 15 and 16 of this License; or
+
+    b) Requiring preservation of specified reasonable legal notices or
+    author attributions in that material or in the Appropriate Legal
+    Notices displayed by works containing it; or
+
+    c) Prohibiting misrepresentation of the origin of that material, or
+    requiring that modified versions of such material be marked in
+    reasonable ways as different from the original version; or
+
+    d) Limiting the use for publicity purposes of names of licensors or
+    authors of the material; or
+
+    e) Declining to grant rights under trademark law for use of some
+    trade names, trademarks, or service marks; or
+
+    f) Requiring indemnification of licensors and authors of that
+    material by anyone who conveys the material (or modified versions of
+    it) with contractual assumptions of liability to the recipient, for
+    any liability that these contractual assumptions directly impose on
+    those licensors and authors.
+
+  All other non-permissive additional terms are considered "further
+restrictions" within the meaning of section 10.  If the Program as you
+received it, or any part of it, contains a notice stating that it is
+governed by this License along with a term that is a further
+restriction, you may remove that term.  If a license document contains
+a further restriction but permits relicensing or conveying under this
+License, you may add to a covered work material governed by the terms
+of that license document, provided that the further restriction does
+not survive such relicensing or conveying.
+
+  If you add terms to a covered work in accord with this section, you
+must place, in the relevant source files, a statement of the
+additional terms that apply to those files, or a notice indicating
+where to find the applicable terms.
+
+  Additional terms, permissive or non-permissive, may be stated in the
+form of a separately written license, or stated as exceptions;
+the above requirements apply either way.
+
+  8. Termination.
+
+  You may not propagate or modify a covered work except as expressly
+provided under this License.  Any attempt otherwise to propagate or
+modify it is void, and will automatically terminate your rights under
+this License (including any patent licenses granted under the third
+paragraph of section 11).
+
+  However, if you cease all violation of this License, then your
+license from a particular copyright holder is reinstated (a)
+provisionally, unless and until the copyright holder explicitly and
+finally terminates your license, and (b) permanently, if the copyright
+holder fails to notify you of the violation by some reasonable means
+prior to 60 days after the cessation.
+
+  Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+  Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, you do not qualify to receive new licenses for the same
+material under section 10.
+
+  9. Acceptance Not Required for Having Copies.
+
+  You are not required to accept this License in order to receive or
+run a copy of the Program.  Ancillary propagation of a covered work
+occurring solely as a consequence of using peer-to-peer transmission
+to receive a copy likewise does not require acceptance.  However,
+nothing other than this License grants you permission to propagate or
+modify any covered work.  These actions infringe copyright if you do
+not accept this License.  Therefore, by modifying or propagating a
+covered work, you indicate your acceptance of this License to do so.
+
+  10. Automatic Licensing of Downstream Recipients.
+
+  Each time you convey a covered work, the recipient automatically
+receives a license from the original licensors, to run, modify and
+propagate that work, subject to this License.  You are not responsible
+for enforcing compliance by third parties with this License.
+
+  An "entity transaction" is a transaction transferring control of an
+organization, or substantially all assets of one, or subdividing an
+organization, or merging organizations.  If propagation of a covered
+work results from an entity transaction, each party to that
+transaction who receives a copy of the work also receives whatever
+licenses to the work the party's predecessor in interest had or could
+give under the previous paragraph, plus a right to possession of the
+Corresponding Source of the work from the predecessor in interest, if
+the predecessor has it or can get it with reasonable efforts.
+
+  You may not impose any further restrictions on the exercise of the
+rights granted or affirmed under this License.  For example, you may
+not impose a license fee, royalty, or other charge for exercise of
+rights granted under this License, and you may not initiate litigation
+(including a cross-claim or counterclaim in a lawsuit) alleging that
+any patent claim is infringed by making, using, selling, offering for
+sale, or importing the Program or any portion of it.
+
+  11. Patents.
+
+  A "contributor" is a copyright holder who authorizes use under this
+License of the Program or a work on which the Program is based.  The
+work thus licensed is called the contributor's "contributor version".
+
+  A contributor's "essential patent claims" are all patent claims
+owned or controlled by the contributor, whether already acquired or
+hereafter acquired, that would be infringed by some manner, permitted
+by this License, of making, using, or selling its contributor version,
+but do not include claims that would be infringed only as a
+consequence of further modification of the contributor version.  For
+purposes of this definition, "control" includes the right to grant
+patent sublicenses in a manner consistent with the requirements of
+this License.
+
+  Each contributor grants you a non-exclusive, worldwide, royalty-free
+patent license under the contributor's essential patent claims, to
+make, use, sell, offer for sale, import and otherwise run, modify and
+propagate the contents of its contributor version.
+
+  In the following three paragraphs, a "patent license" is any express
+agreement or commitment, however denominated, not to enforce a patent
+(such as an express permission to practice a patent or covenant not to
+sue for patent infringement).  To "grant" such a patent license to a
+party means to make such an agreement or commitment not to enforce a
+patent against the party.
+
+  If you convey a covered work, knowingly relying on a patent license,
+and the Corresponding Source of the work is not available for anyone
+to copy, free of charge and under the terms of this License, through a
+publicly available network server or other readily accessible means,
+then you must either (1) cause the Corresponding Source to be so
+available, or (2) arrange to deprive yourself of the benefit of the
+patent license for this particular work, or (3) arrange, in a manner
+consistent with the requirements of this License, to extend the patent
+license to downstream recipients.  "Knowingly relying" means you have
+actual knowledge that, but for the patent license, your conveying the
+covered work in a country, or your recipient's use of the covered work
+in a country, would infringe one or more identifiable patents in that
+country that you have reason to believe are valid.
+
+  If, pursuant to or in connection with a single transaction or
+arrangement, you convey, or propagate by procuring conveyance of, a
+covered work, and grant a patent license to some of the parties
+receiving the covered work authorizing them to use, propagate, modify
+or convey a specific copy of the covered work, then the patent license
+you grant is automatically extended to all recipients of the covered
+work and works based on it.
+
+  A patent license is "discriminatory" if it does not include within
+the scope of its coverage, prohibits the exercise of, or is
+conditioned on the non-exercise of one or more of the rights that are
+specifically granted under this License.  You may not convey a covered
+work if you are a party to an arrangement with a third party that is
+in the business of distributing software, under which you make payment
+to the third party based on the extent of your activity of conveying
+the work, and under which the third party grants, to any of the
+parties who would receive the covered work from you, a discriminatory
+patent license (a) in connection with copies of the covered work
+conveyed by you (or copies made from those copies), or (b) primarily
+for and in connection with specific products or compilations that
+contain the covered work, unless you entered into that arrangement,
+or that patent license was granted, prior to 28 March 2007.
+
+  Nothing in this License shall be construed as excluding or limiting
+any implied license or other defenses to infringement that may
+otherwise be available to you under applicable patent law.
+
+  12. No Surrender of Others' Freedom.
+
+  If conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot convey a
+covered work so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you may
+not convey it at all.  For example, if you agree to terms that obligate you
+to collect a royalty for further conveying from those to whom you convey
+the Program, the only way you could satisfy both those terms and this
+License would be to refrain entirely from conveying the Program.
+
+  13. Use with the GNU Affero General Public License.
+
+  Notwithstanding any other provision of this License, you have
+permission to link or combine any covered work with a work licensed
+under version 3 of the GNU Affero General Public License into a single
+combined work, and to convey the resulting work.  The terms of this
+License will continue to apply to the part which is the covered work,
+but the special requirements of the GNU Affero General Public License,
+section 13, concerning interaction through a network will apply to the
+combination as such.
+
+  14. Revised Versions of this License.
+
+  The Free Software Foundation may publish revised and/or new versions of
+the GNU General Public License from time to time.  Such new versions will
+be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+
+  Each version is given a distinguishing version number.  If the
+Program specifies that a certain numbered version of the GNU General
+Public License "or any later version" applies to it, you have the
+option of following the terms and conditions either of that numbered
+version or of any later version published by the Free Software
+Foundation.  If the Program does not specify a version number of the
+GNU General Public License, you may choose any version ever published
+by the Free Software Foundation.
+
+  If the Program specifies that a proxy can decide which future
+versions of the GNU General Public License can be used, that proxy's
+public statement of acceptance of a version permanently authorizes you
+to choose that version for the Program.
+
+  Later license versions may give you additional or different
+permissions.  However, no additional obligations are imposed on any
+author or copyright holder as a result of your choosing to follow a
+later version.
+
+  15. Disclaimer of Warranty.
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+  16. Limitation of Liability.
+
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+  17. Interpretation of Sections 15 and 16.
+
+  If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.
+
+                     END OF TERMS AND CONDITIONS
+                     Explorer++ 1.3.5 64-bit
+-----------------------
+
+Copyright (c) 2005-2011 David Erceg
+
+Explorer++ is free software released under
+the GNU General Public License.
+
+www.explorerplusplus.com
+
+
+About Explorer++
+----------------
+Explorer++ is a free multi-tab file manager for Windows.
+Available on Windows XP and above, it features the
+same familiar interface as Windows Explorer, while
+introducing several enhancements and improvements for a
+much richer file browsing experience.
+
+
+Using Explorer++
+----------------
+Explorer++ can simply be extracted and run.
+There is no need to install it.
+
+
+Reporting Problems
+------------------
+Please send any bugs or problems to:
+
+david@explorerplusplus.com
